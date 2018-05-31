@@ -65,6 +65,34 @@ public class Gui_TaiKhoan extends javax.swing.JFrame {
         t_TenTK = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowDeactivated(java.awt.event.WindowEvent evt) {
+                formWindowDeactivated(evt);
+            }
+            public void windowDeiconified(java.awt.event.WindowEvent evt) {
+                formWindowDeiconified(evt);
+            }
+            public void windowIconified(java.awt.event.WindowEvent evt) {
+                formWindowIconified(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         Tb_TaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,6 +102,11 @@ public class Gui_TaiKhoan extends javax.swing.JFrame {
                 "Mã Tài Khoản", "Tên Tài Khoản"
             }
         ));
+        Tb_TaiKhoan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tb_TaiKhoanMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Tb_TaiKhoan);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -257,6 +290,57 @@ public class Gui_TaiKhoan extends javax.swing.JFrame {
     private void t_TenTKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_TenTKActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t_TenTKActionPerformed
+
+    private void Tb_TaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tb_TaiKhoanMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) Tb_TaiKhoan.getModel();
+        t_MaTK.setText(model.getValueAt(Tb_TaiKhoan.getSelectedRow(),0).toString());
+        t_TenTK.setText(model.getValueAt(Tb_TaiKhoan.getSelectedRow(),1).toString());
+    }//GEN-LAST:event_Tb_TaiKhoanMouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        Main a = new Main();
+                a.setVisible(true);
+                this.setVisible(false);
+                this.dispose();
+                
+    }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowDeactivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeactivated
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowDeactivated
+
+    private void formWindowDeiconified(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeiconified
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowDeiconified
+
+    private void formWindowIconified(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowIconified
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowIconified
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments

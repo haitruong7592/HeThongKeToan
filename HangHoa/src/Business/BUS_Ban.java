@@ -28,7 +28,7 @@ public class BUS_Ban {
                 Ban.setMaHD(rs.getString("MaHD"));
                 Ban.setMSHH(rs.getString("MSHH"));
                 Ban.setSoLuong(rs.getInt("SoLuong"));
-                Ban.setDonGiaBan(rs.getFloat("DonGiaBan"));
+                Ban.setDonGiaBan(rs.getDouble("DonGiaBan"));
                 arr.add(Ban);
 
             }
@@ -56,7 +56,7 @@ public class BUS_Ban {
                 Ban.setMaHD(rs.getString("MaHD"));
                 Ban.setMSHH(rs.getString("MSHH"));
                 Ban.setSoLuong(rs.getInt("SoLuong"));
-                Ban.setDonGiaBan(rs.getFloat("DonGiaBan"));
+                Ban.setDonGiaBan(rs.getDouble("DonGiaBan"));
                 result.add(Ban);
 
 
@@ -72,7 +72,7 @@ public class BUS_Ban {
     
  
     
-    public static int ThemBan(String MaHD, String MSHH,  int SoLuong, float DonGia) {
+    public static int ThemBan(String MaHD, String MSHH,  int SoLuong, Double DonGia) {
         String sql = "Insert into Ban Values('" + MaHD + "', '" + MSHH + "', " + SoLuong + ", "+ DonGia + ")";
         classData my = new classData();
         my.openConnect();

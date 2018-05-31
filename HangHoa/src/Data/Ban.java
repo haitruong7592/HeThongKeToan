@@ -13,7 +13,7 @@ public class Ban {
     private String MaHD;
     private String MSHH;
     private int SoLuong;
-    private float DonGiaBan;
+    private double DonGiaBan;
 
     /**
      * @return the MaHD
@@ -60,14 +60,14 @@ public class Ban {
     /**
      * @return the DonGiaBan
      */
-    public float getDonGiaBan() {
+    public double getDonGiaBan() {
         return DonGiaBan;
     }
 
     /**
      * @param DonGia the DonGiaBan to set
      */
-    public void setDonGiaBan(float DonGiaBan) {
+    public void setDonGiaBan(double DonGiaBan) {
         this.DonGiaBan = DonGiaBan;
     }
     

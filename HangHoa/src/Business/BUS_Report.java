@@ -23,7 +23,7 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class BUS_Report {
     public static void ReportBanHang(String MaHD, String TenCH, String TenKH,String DiaChiKH, String SoHD, String TaiKhoan, String MaSoThueKH,
-             String LyDo, Date NgayThanhToan, String SoSeri, float ThueSuat, String TongTien, String TienThue, String TongTong, String TienRaChu){
+             String LyDo, Date NgayThanhToan, String SoSeri, double ThueSuat, String TongTien, String TienThue, String TongTong, String TienRaChu){
         
         String link ="D:\\GitHub\\HangHoa\\src\\Report\\rpLapHoaDon.jrxml";
         try {

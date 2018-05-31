@@ -27,13 +27,13 @@ public class BUS_HoaDon {
                 HoaDon.setSoHD(rs.getString("SoHD"));
                 HoaDon.setNgayBan(rs.getDate("NgayBan"));
                 HoaDon.setLyDo(rs.getString("LyDo"));
-                HoaDon.setThueSuat(rs.getFloat("ThueSuatBan"));
+                HoaDon.setThueSuat(rs.getDouble("ThueSuatBan"));
                 HoaDon.setNgayThanhToan(rs.getDate("NgayThanhToan"));
                 HoaDon.setMSCH(rs.getString("MSCH"));
                 HoaDon.setMSKH(rs.getString("MSKH"));
                 HoaDon.setMaTK(rs.getString("MaTK"));
                 HoaDon.setSoseri(rs.getString("Soseri"));
-                HoaDon.setTongTien(rs.getFloat("TongTien"));          
+                HoaDon.setTongTien(rs.getDouble("TongTien"));          
                 arr.add(HoaDon);
 
             }
@@ -82,13 +82,13 @@ public class BUS_HoaDon {
                 HoaDon.setSoHD(rs.getString("SoHD"));
                 HoaDon.setNgayBan(rs.getDate("NgayBan"));
                 HoaDon.setLyDo(rs.getString("LyDo"));
-                HoaDon.setThueSuat(rs.getFloat("ThueSuatBan"));
+                HoaDon.setThueSuat(rs.getDouble("ThueSuatBan"));
                 HoaDon.setNgayThanhToan(rs.getDate("NgayThanhToan"));
                 HoaDon.setMSCH(rs.getString("MSCH"));
                 HoaDon.setMSKH(rs.getString("MSKH"));
                 HoaDon.setMaTK(rs.getString("MaTK"));
                 HoaDon.setSoseri(rs.getString("Soseri"));
-                HoaDon.setTongTien(rs.getFloat("TongTien"));    
+                HoaDon.setTongTien(rs.getDouble("TongTien"));    
                 result.add(HoaDon);
 
 
@@ -104,7 +104,7 @@ public class BUS_HoaDon {
     
  
     
-    public static int ThemHoaDon( String SoHD, Date NgayBan,  String LyDo, float ThueSuat,  Date NgayThanhToan, String MSCH, String MSKH, String MaTK, String Soseri, float TongTien) {
+    public static int ThemHoaDon( String SoHD, Date NgayBan,  String LyDo, double ThueSuat,  Date NgayThanhToan, String MSCH, String MSKH, String MaTK, String Soseri, double TongTien) {
         String sql = "Insert into HoaDon Values('','" + SoHD + "', '"+NgayBan +"', '"+ LyDo +"', "+ThueSuat + ", '" + NgayThanhToan + "', '"+ MSCH + "', '" + MSKH + "', '"+MaTK +"', '"+ Soseri + "', "+ TongTien + ")";
         classData my = new classData();
         my.openConnect();

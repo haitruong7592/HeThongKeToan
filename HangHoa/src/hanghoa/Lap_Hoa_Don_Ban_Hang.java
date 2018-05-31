@@ -42,7 +42,7 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
     /**
      * Creates new form Lap_Hoa_Don_Ban_Hang
      */
-    float TongTien = 0;
+    double TongTien = 0;
     
     public Lap_Hoa_Don_Ban_Hang() {
         initComponents();
@@ -714,6 +714,10 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
 
     private void btn_ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThoatActionPerformed
         // TODO add your handling code here:
+        Main a = new Main();
+                a.setVisible(true);
+                this.setVisible(false);
+                this.dispose();
     }//GEN-LAST:event_btn_ThoatActionPerformed
 
     private void btn_LuaVaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LuaVaInActionPerformed
@@ -739,8 +743,8 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                 java.sql.Date sqlDate_NgayThanhToan = new java.sql.Date(utilDate2.getTime());
                 HoaDon.setSoseri(t_SoSeri.getText());
                 HoaDon.setMaTK(cb_TaiKhoan.getSelectedItem().toString());
-                HoaDon.setThueSuat(Float.parseFloat(t_TySuatGTGT.getText()));
-                float TongTong = TongTien +TongTien * Float.parseFloat(t_TySuatGTGT.getText());
+                HoaDon.setThueSuat(Double.parseDouble(t_TySuatGTGT.getText()));
+                double TongTong = TongTien +TongTien * Double.parseDouble(t_TySuatGTGT.getText());
                 HoaDon.setTongTien(TongTong);
                 
                 int kqHD = BUS_HoaDon.ThemHoaDon(HoaDon.getSoHD(), sqlDate_NgayBan,  HoaDon.getLyDo(), HoaDon.getThueSuat(), sqlDate_NgayThanhToan, HoaDon.getMSCH(), HoaDon.getMSKH(), HoaDon.getMaTK(),HoaDon.getSoseri(), HoaDon.getTongTien());
@@ -757,10 +761,10 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                     Ban.setMaHD(MaHD);
                     Ban.setMSHH(Tb_HangHoa.getValueAt(i, 0).toString());
                     Ban.setSoLuong(Integer.parseInt(Tb_HangHoa.getValueAt(i, 3).toString()));
-                    Ban.setDonGiaBan((float) Tb_HangHoa.getValueAt(i, 4));
+                    Ban.setDonGiaBan((double) Tb_HangHoa.getValueAt(i, 4));
                     kqHH = BUS_Ban.ThemBan(Ban.getMaHD(), Ban.getMSHH(), Ban.getSoLuong(), Ban.getDonGiaBan());
                 }
-                BUS_Report.ReportBanHang(MaHD, t_TenCH.getText(), t_TenKH.getText(),t_DiaChiKH.getText(), t_SoHD.getText(), cb_TaiKhoan.getSelectedItem().toString(), t_MaSoThueKH.getText(), t_LyDo.getText(), tD_NgayThanhToan.getDate(), t_SoSeri.getText(), Float.parseFloat(t_TySuatGTGT.getText()), t_Tong.getText(), t_TinhGTGT.getText(), t_TongTien.getText(), t_TienChu.getText());
+                BUS_Report.ReportBanHang(MaHD, t_TenCH.getText(), t_TenKH.getText(),t_DiaChiKH.getText(), t_SoHD.getText(), cb_TaiKhoan.getSelectedItem().toString(), t_MaSoThueKH.getText(), t_LyDo.getText(), tD_NgayThanhToan.getDate(), t_SoSeri.getText(), Double.parseDouble(t_TySuatGTGT.getText()), t_Tong.getText(), t_TinhGTGT.getText(), t_TongTien.getText(), t_TienChu.getText());
                 if (kqHD == 1 && kqHH == 1) {
                     JOptionPane.showConfirmDialog(null, "Lưu thành công!", "Thông báo", -1, 1);
                 } else {
@@ -882,18 +886,18 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                         DonViTinh = p.getDonViTinh().toString();
                         String SoLuong = t_SoLuong.getText().toString();
                         String DonGiaBan = t_DonGia.getText().toString();
-                        float t = Float.parseFloat(SoLuong)*Float.parseFloat(DonGiaBan);
+                        double t = Double.parseDouble(SoLuong)*Double.parseDouble(DonGiaBan);
                         TongTien += t;
                         Locale locale = new Locale("vi","VN"); 
                         NumberFormat format = NumberFormat.getCurrencyInstance(locale);
-                        float thue = Float.parseFloat(t_TySuatGTGT.getText());
+                        double thue = Double.parseDouble(t_TySuatGTGT.getText());
                         thue = TongTien*thue;
                         t_TinhGTGT.setText(format.format(thue));
                         t_Tong.setText(format.format(TongTien));
-                        float TongTong = TongTien+thue;
+                        double TongTong = TongTien+thue;
                         t_TongTien.setText(format.format(TongTong));
                         t_TienChu.setText(numberToString(Math.round(TongTong)));
-                        model.addRow(new Object[]{MaHH, TenHang, DonViTinh, SoLuong, Float.parseFloat(DonGiaBan), t});
+                        model.addRow(new Object[]{MaHH, TenHang, DonViTinh, SoLuong, Double.parseDouble(DonGiaBan), t});
                         
                     }                  
                 }
@@ -920,8 +924,8 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(frame, "Bạn phải chọn một mặt hàng", "Inane error", JOptionPane.WARNING_MESSAGE);
             }
         }else{
-                    float ThanhTienLucDau;
-                    ThanhTienLucDau = (float) model.getValueAt(Tb_HangHoa.getSelectedRow(),5);
+                    double ThanhTienLucDau;
+                    ThanhTienLucDau = (double) model.getValueAt(Tb_HangHoa.getSelectedRow(),5);
                     System.out.println(ThanhTienLucDau);
                     System.out.println(TongTien);
                     TongTien = TongTien - ThanhTienLucDau;
@@ -939,21 +943,21 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                         DonViTinh = p.getDonViTinh().toString();
                         String SoLuong = t_SoLuong.getText().toString();
                         String DonGiaBan = t_DonGia.getText().toString();
-                        float t = Float.parseFloat(SoLuong)*Float.parseFloat(DonGiaBan);
+                        double t = Double.parseDouble(SoLuong)*Double.parseDouble(DonGiaBan);
                         model.setValueAt(MaHH, Tb_HangHoa.getSelectedRow(),0);
                         model.setValueAt(TenHang, Tb_HangHoa.getSelectedRow(),1);
                         model.setValueAt(DonViTinh, Tb_HangHoa.getSelectedRow(),2);
                         model.setValueAt(SoLuong, Tb_HangHoa.getSelectedRow(),3);
-                        model.setValueAt(Float.parseFloat(DonGiaBan), Tb_HangHoa.getSelectedRow(),4);
+                        model.setValueAt(Double.parseDouble(DonGiaBan), Tb_HangHoa.getSelectedRow(),4);
                         model.setValueAt(t, Tb_HangHoa.getSelectedRow(),5);
                         TongTien += t;
                         Locale locale = new Locale("vi","VN"); 
                         NumberFormat format = NumberFormat.getCurrencyInstance(locale);
-                        float thue = Float.parseFloat(t_TySuatGTGT.getText());
+                        double thue = Double.parseDouble(t_TySuatGTGT.getText());
                         thue = TongTien*thue;
                         t_TinhGTGT.setText(format.format(thue));
                         t_Tong.setText(format.format(TongTien));
-                        float TongTong = TongTien+thue;
+                        double TongTong = TongTien+thue;
                         t_TongTien.setText(format.format(TongTong));
                         t_TienChu.setText(numberToString(Math.round(TongTong)));
                     }   
@@ -981,17 +985,17 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(frame, "Bạn phải chọn một mặt hàng.", "Inane error", JOptionPane.WARNING_MESSAGE);
             }
         }else{
-            float ThanhTienLucDau;
-            ThanhTienLucDau = (float) model.getValueAt(Tb_HangHoa.getSelectedRow(),5);
+            double ThanhTienLucDau;
+            ThanhTienLucDau = (double) model.getValueAt(Tb_HangHoa.getSelectedRow(),5);
 
             TongTien = TongTien - ThanhTienLucDau;
             Locale locale = new Locale("vi","VN"); 
             NumberFormat format = NumberFormat.getCurrencyInstance(locale);
-            float thue = Float.parseFloat(t_TySuatGTGT.getText());
+            double thue = Double.parseDouble(t_TySuatGTGT.getText());
             thue = TongTien*thue;
             t_TinhGTGT.setText(format.format(thue));
             t_Tong.setText(format.format(TongTien));
-            float TongTong = TongTien+thue;
+            double TongTong = TongTien+thue;
             t_TongTien.setText(format.format(TongTong));
             t_TienChu.setText(numberToString(Math.round(TongTong)));
             model.removeRow(Tb_HangHoa.getSelectedRow());

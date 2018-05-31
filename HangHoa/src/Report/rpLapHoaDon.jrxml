@@ -17,7 +17,7 @@
 	<parameter name="LyDo" class="java.lang.String"/>
 	<parameter name="NgayThanhToan" class="java.util.Date"/>
 	<parameter name="SoSeri" class="java.lang.String"/>
-	<parameter name="ThueSuat" class="java.lang.Float"/>
+	<parameter name="ThueSuat" class="java.lang.Double"/>
 	<parameter name="TongTien" class="java.lang.String"/>
 	<parameter name="TienThue" class="java.lang.String"/>
 	<parameter name="TongTong" class="java.lang.String"/>

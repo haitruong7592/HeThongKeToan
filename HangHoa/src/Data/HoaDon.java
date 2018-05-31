@@ -16,13 +16,13 @@ public class HoaDon {
     private String SoHD;
     private Date NgayBan;
     private String LyDo;
-    private float ThueSuat;
+    private double ThueSuat;
     private Date NgayThanhToan;
     private String MSCH;
     private String MSKH;
     private String MaTK;
     private String Soseri;
-    private float TongTien;
+    private double TongTien;
 
     /**
      * @return the MaHD
@@ -83,14 +83,14 @@ public class HoaDon {
     /**
      * @return the ThueSuat
      */
-    public float getThueSuat() {
+    public double getThueSuat() {
         return ThueSuat;
     }
 
     /**
      * @param ThueSuat the ThueSuat to set
      */
-    public void setThueSuat(float ThueSuat) {
+    public void setThueSuat(double ThueSuat) {
         this.ThueSuat = ThueSuat;
     }
 
@@ -167,14 +167,14 @@ public class HoaDon {
     /**
      * @return the TongTien
      */
-    public float getTongTien() {
+    public double getTongTien() {
         return TongTien;
     }
 
     /**
      * @param TongTien the TongTien to set
      */
-    public void setTongTien(float TongTien) {
+    public void setTongTien(double TongTien) {
         this.TongTien = TongTien;
     }
 
