@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5dfc8e5-ab44-4bdc-ab69-da926c645bf8">
 	<property name="ireport.zoom" value="1.610510000000001"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
+	<property name="ireport.x" value="127"/>
+	<property name="ireport.y" value="379"/>
 	<style name="Header" fontName="Times New Roman" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Identity-H"/>
 	<style name="Detail" pdfEncoding="Identity-H"/>
 	<parameter name="MaHD" class="java.lang.String">
@@ -17,7 +17,7 @@
 	<parameter name="LyDo" class="java.lang.String"/>
 	<parameter name="NgayThanhToan" class="java.util.Date"/>
 	<parameter name="SoSeri" class="java.lang.String"/>
-	<parameter name="ThueSuat" class="java.lang.Double"/>
+	<parameter name="ThueSuat" class="java.lang.String"/>
 	<parameter name="TongTien" class="java.lang.String"/>
 	<parameter name="TienThue" class="java.lang.String"/>
 	<parameter name="TongTong" class="java.lang.String"/>
@@ -433,7 +433,7 @@ WHERE
 				<text><![CDATA[Thuế suất GTGT]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="229" y="24" width="43" height="20" uuid="19f91128-e95e-474b-ba70-77950fc2f4f1"/>
+				<reportElement x="229" y="24" width="65" height="22" uuid="19f91128-e95e-474b-ba70-77950fc2f4f1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{ThueSuat}]]></textFieldExpression>
 			</textField>

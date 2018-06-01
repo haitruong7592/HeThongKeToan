@@ -764,7 +764,7 @@ public class Lap_Hoa_Don_Ban_Hang extends javax.swing.JFrame {
                     Ban.setDonGiaBan((double) Tb_HangHoa.getValueAt(i, 4));
                     kqHH = BUS_Ban.ThemBan(Ban.getMaHD(), Ban.getMSHH(), Ban.getSoLuong(), Ban.getDonGiaBan());
                 }
-                BUS_Report.ReportBanHang(MaHD, t_TenCH.getText(), t_TenKH.getText(),t_DiaChiKH.getText(), t_SoHD.getText(), cb_TaiKhoan.getSelectedItem().toString(), t_MaSoThueKH.getText(), t_LyDo.getText(), tD_NgayThanhToan.getDate(), t_SoSeri.getText(), Double.parseDouble(t_TySuatGTGT.getText()), t_Tong.getText(), t_TinhGTGT.getText(), t_TongTien.getText(), t_TienChu.getText());
+                BUS_Report.ReportBanHang(MaHD, t_TenCH.getText(), t_TenKH.getText(),t_DiaChiKH.getText(), t_SoHD.getText(), cb_TaiKhoan.getSelectedItem().toString(), t_MaSoThueKH.getText().toString(), t_LyDo.getText(), tD_NgayThanhToan.getDate(), t_SoSeri.getText(), t_TySuatGTGT.getText(), t_Tong.getText(), t_TinhGTGT.getText(), t_TongTien.getText(), t_TienChu.getText());
                 if (kqHD == 1 && kqHH == 1) {
                     JOptionPane.showConfirmDialog(null, "Lưu thành công!", "Thông báo", -1, 1);
                 } else {

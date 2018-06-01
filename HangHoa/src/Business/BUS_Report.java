@@ -23,9 +23,9 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class BUS_Report {
     public static void ReportBanHang(String MaHD, String TenCH, String TenKH,String DiaChiKH, String SoHD, String TaiKhoan, String MaSoThueKH,
-             String LyDo, Date NgayThanhToan, String SoSeri, double ThueSuat, String TongTien, String TienThue, String TongTong, String TienRaChu){
+             String LyDo, Date NgayThanhToan, String SoSeri, String ThueSuat, String TongTien, String TienThue, String TongTong, String TienRaChu){
         
-        String link ="D:\\GitHub\\HangHoa\\src\\Report\\rpLapHoaDon.jrxml";
+        String link ="D:\\GitHub\\HeThongKeToan\\HangHoa\\src\\Report\\rpLapHoaDon.jrxml";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String database = "jdbc:sqlserver://localhost:1433;database=HTKT";
